@@ -1,1 +1,1 @@
-# cottage-and-castle
+# Cottage & Castle
