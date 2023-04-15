@@ -17,6 +17,13 @@ const userSchema = new Schema({
     trim: true,
     minLength: 3,
     required: true
+  },
+  adminKey: {
+    type: String,
+  },
+  isAdmin: {
+    type: Boolean,
+    default: false,
   }
 }, {
   timestamps: true,
