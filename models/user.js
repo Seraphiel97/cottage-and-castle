@@ -10,16 +10,17 @@ const userSchema = new Schema({
     unique: true,
     trim: true,
     lowercase: true,
-    required: true
+    required: true,
   },
   password: {
     type: String,
     trim: true,
     minLength: 3,
-    required: true
+    required: true,
   },
   adminKey: {
     type: String,
+    required: false,
   },
   isAdmin: {
     type: Boolean,

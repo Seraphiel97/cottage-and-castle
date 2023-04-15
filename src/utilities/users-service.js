@@ -46,3 +46,11 @@ export async function checkToken(){
     // const tokenExp = await usersAPI.checkToken()
     // return new Date(tokenExp)
 }
+
+export async function login(userData){
+    // Delegate the network request code to the users-api.js API module
+    // which will ultimately return a JSON Web Token (JWT)
+    const token = await usersAPI.login(userData)
+    localStorage.setItem('token', token)
+    return getUser()
+}

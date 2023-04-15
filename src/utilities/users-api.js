@@ -9,4 +9,8 @@ export function signUp(userData){
   export function checkToken() {
     return sendRequest(`${BASE_URL}/check-token`);
   }
+
+export function login(userData) {
+    return sendRequest(`${BASE_URL}/login`, 'POST', userData)
+}
   

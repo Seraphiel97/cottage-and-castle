@@ -3,7 +3,8 @@ const jwt = require('jsonwebtoken')
 
 module.exports = {
   create,
-  checkToken
+  checkToken,
+  login
 }
 
 async function create(req, res){
@@ -29,3 +30,19 @@ function createJWT(user){
     { expiresIn: '24hr'}
   )
 }
+
+async function login(req, res) {
+  try{
+    console.log(req.body)
+    const user = await User.findOne({email: req.body.email})
+    const result = await bcrypt.compare(req.body.password, user.password)
+    if (result){
+      const token = createJWT(user)
+      res.json(token)
+    } else {
+      res.status(400).json(error)
+    }
+  }catch(error){
+    console.log('catch')
+    res.status(400).json(error)
+  }}
