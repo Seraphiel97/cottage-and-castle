@@ -1,4 +1,6 @@
 import {useState} from 'react'
+import {useNavigate} from 'react-router-dom'
+import * as appointmentsAPI from '../../utilities/appointments-api'
 
 export default function Appointment() {
   
@@ -9,6 +11,8 @@ export default function Appointment() {
     scrubScale: null,
     houseSize: null,
   })
+
+  const [err, setErr] = useState('')
   
   function handleChange(evt) {
     setApptData({...apptData, [evt.target.name]: evt.target.value})
@@ -17,9 +21,11 @@ export default function Appointment() {
   async function handleSubmit(evt) {
     evt.preventDefault()
     try {
-      
+      const appt = await appointmentsAPI.createAppointment(apptData)
+      console.log(appt)
     } catch {
-
+      setErr('Something went wrong')
+      console.log(err)
     }
   }
 
