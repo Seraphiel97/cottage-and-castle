@@ -1,4 +1,5 @@
 const Appointment = require('../../models/appointment')
+const User = require('../../models/user')
 
 module.exports = {
     createAppointment,
@@ -8,7 +9,7 @@ module.exports = {
 async function createAppointment(req, res) {
     try {
         const appt = await Appointment.create(req.body);
-        console.log(appt);
+        await appt.save();
         res.json(appt)
     } catch (err){
         res.status(err).json(err);

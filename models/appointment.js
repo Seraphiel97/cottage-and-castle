@@ -5,7 +5,7 @@ const appointmentSchema = new Schema ({
 user: {
     type: Schema.Types.ObjectId,
     ref: 'User',
-    required: true,
+    // required: true,
 },
 baseService: {
     type: Schema.Types.ObjectId,
