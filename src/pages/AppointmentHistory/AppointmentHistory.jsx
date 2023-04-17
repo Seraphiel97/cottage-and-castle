@@ -16,6 +16,7 @@ export default function AppointmentHistory() {
       const requested = await appointmentsAPI.getRequested();
       setRequestedAppts(requested);
     }
+    getRequested()
   }, []);
 
   useEffect(function() {
@@ -23,6 +24,7 @@ export default function AppointmentHistory() {
       const confirmed = await appointmentsAPI.getConfirmed();
       setConfirmedAppts(confirmed);
     }
+    getConfirmed();
   }, []);
 
   useEffect(function() {
@@ -30,6 +32,7 @@ export default function AppointmentHistory() {
       const completed = await appointmentsAPI.getCompleted();
       setCompletedAppts(completed);
     }
+    getCompleted();
   }, []);
   
   const requests = requestedAppts.map((request, index) => (
