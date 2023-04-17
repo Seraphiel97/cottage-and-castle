@@ -43,7 +43,7 @@ export default function Appointment({user}) {
     <>
     <h1>Appointment Request</h1>
     <form autoComplete="off" onSubmit={handleSubmit} 
-    className="container columns-2">
+    className="flex justify-between">
       <div>
         <label>Service Package:</label>
         <select name="baseService" value={apptData.baseService} 

@@ -22,6 +22,7 @@ async function createAppointment(req, res) {
 async function getRequested(req, res) {
     try {
         const appts = await Appointment.find({status: 'Requested'})
+        console.log(req.body)
         res.json(appts)
     } catch (err) {
         res.status(err).json(err);
