@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import * as usersService from '../../utilities/users-service';
+import './nav.css'
 
 export default function Nav({user, updateUser}) {
   
@@ -10,7 +11,7 @@ export default function Nav({user, updateUser}) {
   }
   
   return (
-    <nav>
+    <nav className="nav">
       { user ?
       <>
         <Link to="/">Home</Link>
@@ -21,7 +22,7 @@ export default function Nav({user, updateUser}) {
         &nbsp; | &nbsp;
         <Link to="/appointment/history">Appointment History</Link>
         &nbsp; | &nbsp;
-        <p>Welcome, {user.name}</p>
+        <Link to="/">Welcome, {user.name}</Link>
         &nbsp; | &nbsp;
         <Link to="" onClick={handleLogout}>Logout</Link>
       </>
