@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react'
 import * as servicesAPI from '../../utilities/services-api'
+import Packages from '../../components/Packages/Packages'
 
 export default function Services() {
   
@@ -13,10 +14,14 @@ export default function Services() {
     getServices()
   }, [])
 
+  const packages = services.map((service, index) => (
+    <Packages service={service} key={index} />
+  ))
+
   return (
     <div>
       <h1>Services</h1>
-
+      {packages}
     </div>
   )
 }
