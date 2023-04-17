@@ -11,6 +11,5 @@ router.get('/confirms', ensureLoggedIn, appointmentsCtrl.getConfirmed)
 
 router.get('/completes', ensureLoggedIn, appointmentsCtrl.getCompleted)
 
-// router.get('/history', appointmentsCtrl.getAll)
 
 module.exports = router
