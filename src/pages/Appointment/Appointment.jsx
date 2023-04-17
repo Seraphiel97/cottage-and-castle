@@ -19,13 +19,23 @@ export default function Appointment({user}) {
   }
   
   async function handleSubmit(evt) {
+    
     evt.preventDefault()
+    
     try {
+      
       const appt = await appointmentsAPI.createAppointment({...apptData, user: user._id})
       console.log(appt)
+      setApptData({
+        baseService: '',
+        address: '',
+        date: '',
+        scrubScale: '',
+        houseSize: '',
+      })
+
     } catch {
-      setErr('Something went wrong')
-      console.log(err)
+      setErr('Apologies, something went wrong. Please check all information fields and try again.')
     }
   }
 
@@ -76,6 +86,7 @@ export default function Appointment({user}) {
       </div>
       <button type="submit">Submit Request</button>
     </form>
+    <p>{err}</p>
     </>
   )
 }
