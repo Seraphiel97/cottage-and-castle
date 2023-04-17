@@ -48,8 +48,11 @@ export default function AppointmentHistory() {
     <div>
       <h1>Appointment History</h1>
       <div>
+        <h2>Requested:</h2>
         {requests}
+        <h2>Confirmed:</h2>
         {confirms}
+        <h2>Completed:</h2>
         {completes}
       </div>
     </div>

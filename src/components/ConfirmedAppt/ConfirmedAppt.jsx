@@ -1,9 +1,12 @@
 import React from 'react'
 
-export default function ConfirmedAppt() {
+export default function ConfirmedAppt({confirm}) {
   return (
     <div>
-        <h2>Confirmed:</h2>
+        <p>{confirm.baseService}</p>
+        <p>{confirm.address}</p>
+        <p>{confirm.date}</p>
+        <p>{confirm.status}</p>
     </div>
   )
 }

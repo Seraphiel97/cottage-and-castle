@@ -5,7 +5,10 @@ export default function RequestedAppt({request}) {
   
     return (
     <div>
-        <h2>Requested:</h2>
+        <p>{request.baseService}</p>
+        <p>{request.address}</p>
+        <p>{request.date}</p>
+        <p>{request.status}</p>
     </div>
   )
 }
