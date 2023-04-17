@@ -27,6 +27,10 @@ date: {
 scrubScale: {
     type: Number,
     required: true,
+},
+houseSize: {
+    type: Number,
+    required: true,
 }
 }, {
     timestamps: true,
