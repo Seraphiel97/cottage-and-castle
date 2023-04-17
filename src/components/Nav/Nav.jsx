@@ -11,7 +11,7 @@ export default function Nav({user, updateUser}) {
   }
   
   return (
-    <nav className="nav">
+    <nav className="container mx-auto">
       { user ?
       <>
         <Link to="/">Home</Link>
