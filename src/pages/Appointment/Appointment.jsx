@@ -16,12 +16,18 @@ export default function Appointment() {
   
   async function handleSubmit(evt) {
     evt.preventDefault()
+    try {
+
+    } catch {
+
+    }
   }
 
   return (
     <>
     <h1>Appointment Request</h1>
-    <form autoComplete="off" onSubmit={handleSubmit} className="container">
+    <form autoComplete="off" onSubmit={handleSubmit} 
+    className="container columns-2">
       <div>
         <label>Service Package:</label>
         <select name="baseService" value={apptData.baseService} 
@@ -35,7 +41,7 @@ export default function Appointment() {
         onChange={handleChange} required/>
       </div>
       <div>
-        <label>Available Dates:</label>
+        <label>Available Date:</label>
         <input type="date" name="date" value={apptData.date} 
         onChange={handleChange} required/>
       </div>

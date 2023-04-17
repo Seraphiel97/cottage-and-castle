@@ -6,6 +6,7 @@ module.exports = {
     "./index.html"
   ],
   theme: {
+    fontFamily: 'MedievalSharp',
     extend: {},
   },
   plugins: [],
