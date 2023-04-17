@@ -17,7 +17,7 @@ export default function Appointment() {
   async function handleSubmit(evt) {
     evt.preventDefault()
     try {
-
+      
     } catch {
 
     }
@@ -32,7 +32,9 @@ export default function Appointment() {
         <label>Service Package:</label>
         <select name="baseService" value={apptData.baseService} 
         onChange={handleChange} required>
-
+          <option value="643d6cf7392f4c61d764bed8">Chariot</option>
+          <option value="643d6cf7392f4c61d764bed9">Wagon</option>
+          <option value="643d6cf7392f4c61d764beda">Carriage</option>
         </select>
       </div>
       <div>
