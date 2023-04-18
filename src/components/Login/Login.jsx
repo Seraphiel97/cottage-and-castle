@@ -1,14 +1,22 @@
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
+import { useNavigate } from 'react-router-dom';
 import * as usersService from '../../utilities/users-service'
 
-export default function Login({setUser}) {
-  
+export default function Login({setUser, user}) {
+  const navigate = useNavigate();
+
   const [credentials, setCredentials] = useState({
     email: '',
     password: ''
   });
   
   const [error, setError] = useState('');
+
+  useEffect(function() {
+    if (user) {
+      navigate('/')
+    }
+  })
 
   function handleChange(evt) {
     setCredentials({ ...credentials, [evt.target.name]: evt.target.value });

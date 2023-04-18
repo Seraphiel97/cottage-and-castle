@@ -2,14 +2,14 @@ import {useState} from 'react'
 import Login from '../../components/Login/Login'
 import RegisterAcct from '../../components/RegisterAcct/RegisterAcct'
 
-export default function Auth({setUser}) {
+export default function Auth({setUser, user}) {
   const [showLogin, setShowLogin] = useState(true)
   
   return (
     <main>
       {showLogin 
       ?
-      <Login setUser={setUser}/>
+      <Login setUser={setUser} user={user}/>
       :
       <RegisterAcct setUser={setUser}/>
       }

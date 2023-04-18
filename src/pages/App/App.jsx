@@ -24,9 +24,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
-          <Route path="/auth" element={<Auth setUser={setUser}/>} />
+          <Route path="/auth" element={<Auth setUser={setUser} user={user}/>} />
           <Route path="/appointment" element={<Appointment user={user}/>} />
-          <Route path="/appointment/history" element={<AppointmentHistory />} />
+          <Route path="/appointment/history" element={<AppointmentHistory user={user}/>} />
         </Routes>
       </>
     </main>

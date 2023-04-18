@@ -32,7 +32,7 @@ export default function Nav({user, updateUser}) {
         &nbsp; | &nbsp;
         <Link to="/services">Services</Link>
         &nbsp; | &nbsp;
-        <Link to="/appointment">Request Appointment</Link>
+        <Link to="/auth">Request Appointment</Link>
         &nbsp; | &nbsp;
         <Link to="/auth">Login</Link>
       </>

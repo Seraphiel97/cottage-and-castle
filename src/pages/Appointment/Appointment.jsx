@@ -60,7 +60,7 @@ export default function Appointment({user}) {
       </div>
       <div>
         <label>Available Date:</label>
-        <input type="date" name="date" value={apptData.date} 
+        <input type="datetime-local" name="date" value={apptData.date} 
         onChange={handleChange} required/>
       </div>
       <div>

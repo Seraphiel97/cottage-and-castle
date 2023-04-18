@@ -5,7 +5,7 @@ import CompletedAppt from '../../components/CompletedAppt/CompletedAppt'
 import * as appointmentsAPI from '../../utilities/appointments-api'
 
 
-export default function AppointmentHistory() {
+export default function AppointmentHistory({user}) {
   
   const [requestedAppts, setRequestedAppts] = useState([])
   const [confirmedAppts, setConfirmedAppts] = useState([])

@@ -14,6 +14,7 @@ export default function Packages({service}) {
         <p>Refrigerator Interior: {service.refrigeratorInterior ? 'Yes' : 'No'}</p>
         <p>Oven Degrease: {service.ovenDegrease ? 'Yes' : 'No'}</p>
         <p>Organization: {service.organization ? 'Yes' : 'No'}</p>
+        <h3>For as little as ${service.price}!</h3>
     </div>
   )
 }
