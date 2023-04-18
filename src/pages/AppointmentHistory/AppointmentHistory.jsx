@@ -12,31 +12,33 @@ export default function AppointmentHistory({user}) {
   const [completedAppts, setCompletedAppts] = useState([])
 
   useEffect(function() {
-    async function getRequested() {
-      const requested = await appointmentsAPI.getRequested();
-      const result = requested.filter(request => request.user === user._id)
-      setRequestedAppts(result);
+    async function getAll() {
+      const appointments = await appointmentsAPI.getAll()
+      if (user.isAdmin) {
+        appointments.forEach(appt => {
+          if (appt.status === 'Requested') {
+            setRequestedAppts([...requestedAppts, appt]);
+          } else if (appt.status === 'Confirmed') {
+            setConfirmedAppts([...confirmedAppts, appt]);
+          } else if (appt.status === 'Completed') {
+            setCompletedAppts([...completedAppts, appt])
+          }
+        })
+      } else {
+        const result = appointments.filter(appt => appt.user === user._id)
+        result.forEach(appt => {
+          if (appt.status === 'Requested') {
+            setRequestedAppts([...requestedAppts, appt]);
+          } else if (appt.status === 'Confirmed') {
+            setConfirmedAppts([...confirmedAppts, appt]);
+          } else if (appt.status === 'Completed') {
+            setCompletedAppts([...completedAppts, appt])
+          }
+        })
+      }
     }
-    getRequested()
-  }, []);
-
-  useEffect(function() {
-    async function getConfirmed() {
-      const confirmed = await appointmentsAPI.getConfirmed();
-      const result = confirmed.filter(confirm => confirm.user === user._id)
-      setConfirmedAppts(result);
-    }
-    getConfirmed();
-  }, []);
-
-  useEffect(function() {
-    async function getCompleted() {
-      const completed = await appointmentsAPI.getCompleted();
-      const result = completed.filter(complete => complete.user === user._id)
-      setCompletedAppts(result);
-    }
-    getCompleted();
-  }, []);
+    getAll();
+  }, [])
   
   const requests = requestedAppts.map((request, index) => (
     <RequestedAppt key={index} request={request}/>

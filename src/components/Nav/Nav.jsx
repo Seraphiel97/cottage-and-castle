@@ -20,7 +20,12 @@ export default function Nav({user, updateUser}) {
         &nbsp; | &nbsp;
         <Link to="/appointment">Request Appointment</Link>
         &nbsp; | &nbsp;
+        {user.isAdmin 
+        ?
+        <Link to="/appointment/history">Manage Appointments</Link>
+        :
         <Link to="/appointment/history">Appointment History</Link>
+        }
         &nbsp; | &nbsp;
         <Link to="/">Welcome, {user.name}</Link>
         &nbsp; | &nbsp;

@@ -3,9 +3,7 @@ const User = require('../../models/user')
 
 module.exports = {
     createAppointment,
-    getRequested,
-    getConfirmed,
-    getCompleted,
+    getAll,
 }
 
 async function createAppointment(req, res) {
@@ -18,28 +16,10 @@ async function createAppointment(req, res) {
     }
 }
 
-async function getRequested(req, res) {
+async function getAll(req, res) {
     try {
-        const appts = await Appointment.find({status: 'Requested'})
-        res.json(appts)
-    } catch (err) {
-        res.status(err).json(err);
-    }
-}
-
-async function getConfirmed(req, res) {
-    try {
-        const appts = await Appointment.find({status: 'Confirmed'})
-        res.json(appts)
-    } catch (err) {
-        res.status(err).json(err);
-    }
-}
-
-async function getCompleted(req, res) {
-    try {
-        const appts = await Appointment.find({status: 'Completed'})
-        res.json(appts)
+        const appointments = await Appointment.find({})
+        res.json(appointments)
     } catch (err) {
         res.status(err).json(err);
     }

@@ -7,7 +7,6 @@ import Home from '../Home/Home'
 import Services from '../Services/Services'
 import Appointment from '../Appointment/Appointment'
 import AppointmentHistory from '../AppointmentHistory/AppointmentHistory'
-import AdminControl from '../AdminControl/AdminControl'
 import './App.css'
 
 function App() {
