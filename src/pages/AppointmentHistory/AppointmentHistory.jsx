@@ -41,15 +41,15 @@ export default function AppointmentHistory({user}) {
   }, [])
   
   const requests = requestedAppts.map((request, index) => (
-    <RequestedAppt key={index} request={request}/>
+    <RequestedAppt key={index} request={request} user={user} />
   ))
 
   const confirms = confirmedAppts.map((confirm, index) => (
-    <ConfirmedAppt key={index} confirm={confirm}/>
+    <ConfirmedAppt key={index} confirm={confirm} user={user} />
   ))
 
   const completes = completedAppts.map((complete, index) => (
-    <CompletedAppt key={index} complete={complete}/>
+    <CompletedAppt key={index} complete={complete} user={user} />
   ))
 
   return (

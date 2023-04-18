@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function RequestedAppt({request}) {
+export default function RequestedAppt({request, user}) {
   
   
     return (
@@ -9,6 +9,12 @@ export default function RequestedAppt({request}) {
         <p>{request.address}</p>
         <p>{request.date}</p>
         <p>{request.status}</p>
+        {user.isAdmin
+        ?
+        <button>Confirm</button>
+        :
+        <button hidden='hidden'>Confirm</button>
+        }
     </div>
   )
 }
