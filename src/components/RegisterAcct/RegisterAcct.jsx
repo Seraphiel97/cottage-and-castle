@@ -1,8 +1,10 @@
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
+import { useNavigate } from 'react-router-dom';
 import * as usersService from '../../utilities/users-service'
 
-export default function RegisterAcct({setUser}) {
-  
+export default function RegisterAcct({setUser, user}) {
+  const navigate = useNavigate();
+
   const [credentials, setCredentials] = useState({
     name: '',
     email: '',
@@ -13,6 +15,12 @@ export default function RegisterAcct({setUser}) {
   });
   
   const [error, setError] = useState('');
+
+  useEffect(function() {
+    if (user) {
+      navigate('/')
+    }
+  })
 
   function handleChange(evt) {
     setCredentials({ ...credentials, [evt.target.name]: evt.target.value });
@@ -62,7 +70,7 @@ export default function RegisterAcct({setUser}) {
           <label>
           Confirm Password:
           </label>
-          <input type="text" name="confirm" value={credentials.confirm} 
+          <input type="password" name="confirm" value={credentials.confirm} 
           onChange={handleChange} required/>
         </div>
         <div>

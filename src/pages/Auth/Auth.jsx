@@ -11,7 +11,7 @@ export default function Auth({setUser, user}) {
       ?
       <Login setUser={setUser} user={user}/>
       :
-      <RegisterAcct setUser={setUser}/>
+      <RegisterAcct setUser={setUser} user={user}/>
       }
       <button onClick={() => setShowLogin(!showLogin)}>
         {showLogin
