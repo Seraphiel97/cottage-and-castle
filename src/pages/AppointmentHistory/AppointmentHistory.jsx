@@ -11,50 +11,46 @@ export default function AppointmentHistory({user}) {
   const [confirmedAppts, setConfirmedAppts] = useState([])
   const [completedAppts, setCompletedAppts] = useState([])
 
+  function handleState(data) {
+    data.forEach(appt => {
+      if (appt.status === 'Requested') {
+        setRequestedAppts(prevState => [...prevState, appt]);
+      } else if (appt.status === 'Confirmed') {
+        setConfirmedAppts(prevState => [...prevState, appt]);
+      } else if (appt.status === 'Completed') {
+        setCompletedAppts(prevState => [...prevState, appt])
+      }
+    })
+  }
+  
   useEffect(function() {
     async function getAll() {
       const appointments = await appointmentsAPI.getAll()
       if (user.isAdmin) {
-        appointments.forEach(appt => {
-          if (appt.status === 'Requested') {
-            setRequestedAppts([...requestedAppts, appt]);
-          } else if (appt.status === 'Confirmed') {
-            setConfirmedAppts([...confirmedAppts, appt]);
-          } else if (appt.status === 'Completed') {
-            setCompletedAppts([...completedAppts, appt])
-          }
-        })
+        handleState(appointments);
       } else {
         const result = appointments.filter(appt => appt.user === user._id)
-        result.forEach(appt => {
-          if (appt.status === 'Requested') {
-            setRequestedAppts([...requestedAppts, appt]);
-          } else if (appt.status === 'Confirmed') {
-            setConfirmedAppts([...confirmedAppts, appt]);
-          } else if (appt.status === 'Completed') {
-            setCompletedAppts([...completedAppts, appt])
-          }
-        })
+        handleState(result);
       }
     }
     getAll();
   }, [])
 
-  async function handleUpdate() {
-    const appt = await appointmentsAPI.changeStatus()
+  async function handleUpdate(appointment) {
+    const appt = await appointmentsAPI.changeStatus(appointment)
     console.log(appt);
   }
   
   const requests = requestedAppts.map((request, index) => (
-    <RequestedAppt key={index} request={request} user={user} />
+    <RequestedAppt key={index} request={request} user={user} handleUpdate={handleUpdate}/>
   ))
 
   const confirms = confirmedAppts.map((confirm, index) => (
-    <ConfirmedAppt key={index} confirm={confirm} user={user} />
+    <ConfirmedAppt key={index} confirm={confirm} user={user} handleUpdate={handleUpdate}/>
   ))
 
   const completes = completedAppts.map((complete, index) => (
-    <CompletedAppt key={index} complete={complete} user={user} />
+    <CompletedAppt key={index} complete={complete} user={user} handleUpdate={handleUpdate}/>
   ))
 
   return (

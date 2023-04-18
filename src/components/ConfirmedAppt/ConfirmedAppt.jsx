@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function ConfirmedAppt({confirm, user}) {
+export default function ConfirmedAppt({confirm, user, handleUpdate}) {
   return (
     <div>
         <p>{confirm.baseService}</p>
@@ -9,7 +9,7 @@ export default function ConfirmedAppt({confirm, user}) {
         <p>{confirm.status}</p>
         {user.isAdmin
         ?
-        <button>Complete</button>
+        <button onClick={() => handleUpdate(confirm)}>Complete</button>
         :
         <button hidden='hidden'>Complete</button>
         }

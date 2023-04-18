@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function RequestedAppt({request, user}) {
+export default function RequestedAppt({request, user, handleUpdate}) {
   
   
     return (
@@ -11,7 +11,7 @@ export default function RequestedAppt({request, user}) {
         <p>{request.status}</p>
         {user.isAdmin
         ?
-        <button>Confirm</button>
+        <button onClick={() => handleUpdate(request)}>Confirm</button>
         :
         <button hidden='hidden'>Confirm</button>
         }
