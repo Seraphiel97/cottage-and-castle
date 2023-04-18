@@ -14,7 +14,8 @@ export default function AppointmentHistory({user}) {
   useEffect(function() {
     async function getRequested() {
       const requested = await appointmentsAPI.getRequested();
-      setRequestedAppts(requested);
+      const result = requested.filter(request => request.user === user._id)
+      setRequestedAppts(result);
     }
     getRequested()
   }, []);
@@ -22,7 +23,8 @@ export default function AppointmentHistory({user}) {
   useEffect(function() {
     async function getConfirmed() {
       const confirmed = await appointmentsAPI.getConfirmed();
-      setConfirmedAppts(confirmed);
+      const result = confirmed.filter(confirm => confirm.user === user._id)
+      setConfirmedAppts(result);
     }
     getConfirmed();
   }, []);
@@ -30,7 +32,8 @@ export default function AppointmentHistory({user}) {
   useEffect(function() {
     async function getCompleted() {
       const completed = await appointmentsAPI.getCompleted();
-      setCompletedAppts(completed);
+      const result = completed.filter(complete => complete.user === user._id)
+      setCompletedAppts(result);
     }
     getCompleted();
   }, []);
