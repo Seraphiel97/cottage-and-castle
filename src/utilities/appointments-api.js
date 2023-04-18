@@ -9,3 +9,7 @@ export function createAppointment(apptData) {
 export function getAll() {
     return sendRequest(`${BASE_URL}/retrieve`)
 }
+
+export function changeStatus(appointment) {
+  return sendRequest(`${BASE_URL}/status`, 'PUT', appointment)
+}

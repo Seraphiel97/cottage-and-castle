@@ -39,6 +39,11 @@ export default function AppointmentHistory({user}) {
     }
     getAll();
   }, [])
+
+  async function handleUpdate() {
+    const appt = await appointmentsAPI.changeStatus()
+    console.log(appt);
+  }
   
   const requests = requestedAppts.map((request, index) => (
     <RequestedAppt key={index} request={request} user={user} />
