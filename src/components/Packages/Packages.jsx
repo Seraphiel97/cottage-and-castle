@@ -3,7 +3,7 @@ import React from 'react'
 export default function Packages({service}) {
   return (
     <div>
-        <h2>{service.name}</h2>
+        <h2>{service.name} Package:</h2>
         <p>Dusting: {service.dusting ? 'Yes' : 'No'}</p>
         <p>Floors: {service.floors ? 'Yes' : 'No'}</p>
         <p>Kitchen Surfaces: {service.kitchenSurfaces ? 'Yes' : 'No'}</p>

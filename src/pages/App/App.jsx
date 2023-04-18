@@ -7,6 +7,7 @@ import Home from '../Home/Home'
 import Services from '../Services/Services'
 import Appointment from '../Appointment/Appointment'
 import AppointmentHistory from '../AppointmentHistory/AppointmentHistory'
+import AdminControl from '../AdminControl/AdminControl'
 import './App.css'
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <Route path="/auth" element={<Auth setUser={setUser} user={user}/>} />
           <Route path="/appointment" element={<Appointment user={user}/>} />
           <Route path="/appointment/history" element={<AppointmentHistory user={user}/>} />
+          <Route path="/admin" element={<AdminControl />} />
         </Routes>
       </>
     </main>
