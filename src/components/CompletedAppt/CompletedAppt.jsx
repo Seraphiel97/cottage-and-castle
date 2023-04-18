@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function CompletedAppt(complete, user, handleUpdate) {
+export default function CompletedAppt({complete, user, handleUpdate}) {
   return (
     <div>
         <p>{complete.baseService}</p>

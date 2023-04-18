@@ -12,17 +12,25 @@ export default function AppointmentHistory({user}) {
   const [completedAppts, setCompletedAppts] = useState([])
 
   function handleState(data) {
+    const requested = [];
+    const confirmed = [];
+    const completed = [];
+  
     data.forEach(appt => {
       if (appt.status === 'Requested') {
-        setRequestedAppts(prevState => [...prevState, appt]);
+        requested.push(appt);
       } else if (appt.status === 'Confirmed') {
-        setConfirmedAppts(prevState => [...prevState, appt]);
+        confirmed.push(appt);
       } else if (appt.status === 'Completed') {
-        setCompletedAppts(prevState => [...prevState, appt])
+        completed.push(appt);
       }
-    })
-  }
+    });
   
+    setRequestedAppts(requested);
+    setConfirmedAppts(confirmed);
+    setCompletedAppts(completed);
+  }
+
   useEffect(function() {
     async function getAll() {
       const appointments = await appointmentsAPI.getAll()
