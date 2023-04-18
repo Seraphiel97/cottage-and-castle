@@ -10,9 +10,17 @@ module.exports = {
 
 async function create(req, res){
   try {
-    const user = await User.create(req.body)
-    const token = createJWT(user)
-    res.json(token)
+    const correctKey = 'CleaningMagic2023'
+    if (req.body.adminKey === correctKey) {
+      req.body.isAdmin = true
+      const user = await User.create(req.body)
+      const token = createJWT(user)
+      res.json(token)
+    } else {
+      const user = await User.create(req.body)
+      const token = createJWT(user)
+      res.json(token)
+    }
   } catch (error) {
     res.status(400).json(error)
   }
