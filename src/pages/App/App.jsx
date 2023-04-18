@@ -28,7 +28,6 @@ function App() {
           <Route path="/auth" element={<Auth setUser={setUser} user={user}/>} />
           <Route path="/appointment" element={<Appointment user={user}/>} />
           <Route path="/appointment/history" element={<AppointmentHistory user={user}/>} />
-          <Route path="/admin" element={<AdminControl />} />
         </Routes>
       </>
     </main>

@@ -22,11 +22,7 @@ export default function Nav({user, updateUser}) {
         &nbsp; | &nbsp;
         <Link to="/appointment/history">Appointment History</Link>
         &nbsp; | &nbsp;
-        {user.isAdmin ?
-        <Link to="/admin">Welcome, {user.name}</Link>
-        :
         <Link to="/">Welcome, {user.name}</Link>
-        }
         &nbsp; | &nbsp;
         <Link to="" onClick={handleLogout}>Logout</Link>
       </>
