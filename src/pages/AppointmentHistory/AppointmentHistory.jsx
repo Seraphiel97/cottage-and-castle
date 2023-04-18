@@ -11,6 +11,10 @@ export default function AppointmentHistory({user}) {
   const [confirmedAppts, setConfirmedAppts] = useState([])
   const [completedAppts, setCompletedAppts] = useState([])
 
+  useEffect(function() {
+    getAll();
+  }, [])
+
   function handleState(data) {
     const requested = [];
     const confirmed = [];
@@ -31,22 +35,20 @@ export default function AppointmentHistory({user}) {
     setCompletedAppts(completed);
   }
 
-  useEffect(function() {
-    async function getAll() {
-      const appointments = await appointmentsAPI.getAll()
-      if (user.isAdmin) {
-        handleState(appointments);
-      } else {
-        const result = appointments.filter(appt => appt.user === user._id)
-        handleState(result);
-      }
+  async function getAll() {
+    const appointments = await appointmentsAPI.getAll()
+    if (user.isAdmin) {
+      handleState(appointments);
+    } else {
+      const result = appointments.filter(appt => appt.user === user._id)
+      handleState(result);
     }
-    getAll();
-  }, [])
+  }
 
   async function handleUpdate(appointment) {
     const appt = await appointmentsAPI.changeStatus(appointment)
     console.log(appt);
+    getAll();
   }
   
   const requests = requestedAppts.map((request, index) => (
