@@ -48,6 +48,7 @@ export default function Appointment({user}) {
         <label>Service Package:</label>
         <select name="baseService" value={apptData.baseService} 
         onChange={handleChange} required>
+          <option value="643d6cf7392f4c61d764bed8">--Select a Service Package--</option>
           <option value="643d6cf7392f4c61d764bed8">Chariot</option>
           <option value="643d6cf7392f4c61d764bed9">Wagon</option>
           <option value="643d6cf7392f4c61d764beda">Carriage</option>
@@ -67,7 +68,7 @@ export default function Appointment({user}) {
         <label>Scrub Scale:</label>
         <select name="scrubScale" value={apptData.scrubScale} 
         onChange={handleChange} required>
-          <option value={1}>1</option>
+          <option value={1} selected>1</option>
           <option value={2}>2</option>
           <option value={3}>3</option>
           <option value={4}>4</option>

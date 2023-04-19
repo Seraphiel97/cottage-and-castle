@@ -8,6 +8,7 @@ module.exports = {
 }
 
 async function createAppointment(req, res) {
+    console.log(req.body)
     try {
         const appt = await Appointment.create(req.body);
         await appt.save();
