@@ -19,14 +19,17 @@ export default function CompletedAppt({complete, user, handleUpdate}) {
   })
   
   return (
-    <div className="m-3">
+    <div className="my-3 mx-12 p-2 border-solid border-2 rounded-lg">
         <p>{service}</p>
         <p>{complete.address}</p>
         <p>{date}</p>
         <p>{complete.status}</p>
         {user.isAdmin
         ?
-        <button onClick={() => handleUpdate(complete)}>Not Complete</button>
+        <button onClick={() => handleUpdate(complete)}
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          Not Complete
+        </button>
         :
         <button hidden='hidden'>Not Complete</button>
         }

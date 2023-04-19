@@ -42,59 +42,63 @@ export default function Appointment({user}) {
 
   return (
     <div className="">
-    
-    <form autoComplete="off" onSubmit={handleSubmit} 
-    className="flex flex-col box-border items-center font-sans font-normal">
-      <h1 className="my-6">Appointment Request</h1>
-      <div className="mb-3">
-        <label className="">Service Package:</label>
-        <select name="baseService" value={apptData.baseService} 
-        onChange={handleChange} className="w-56 h-8 ml-1 border-solid border-2 rounded-md" 
-        required>
-          <option value="643d6cf7392f4c61d764bed8">--Select a Service Package--</option>
-          <option value="643d6cf7392f4c61d764bed8">Chariot Package</option>
-          <option value="643d6cf7392f4c61d764bed9">Wagon Package</option>
-          <option value="643d6cf7392f4c61d764beda">Carriage Package</option>
-        </select>
-      </div>
-      <div className="mb-3 content-between">
-        <label className="mr-4">Address:</label>
-        <input name="address" value={apptData.address} 
-        onChange={handleChange} className="w-56 h-8 ml-12 border-solid border-2 rounded-md"
-        required/>
-      </div>
-      <div className="mb-3">
-        <label>Available Date:</label>
-        <input type="datetime-local" name="date" value={apptData.date} 
-        onChange={handleChange} className="w-56 h-8 ml-5 border-solid border-2 rounded-md"
-        required/>
-      </div>
-      <div className="mb-3">
-        <label>Scrub Scale:</label>
-        <select name="scrubScale" value={apptData.scrubScale} 
-        onChange={handleChange} className="w-56 h-8 ml-8 border-solid border-2 rounded-md" 
-        required>
-          <option value={1} selected>1</option>
-          <option value={2}>2</option>
-          <option value={3}>3</option>
-          <option value={4}>4</option>
-          <option value={5}>5</option>
-          <option value={6}>6</option>
-          <option value={7}>7</option>
-          <option value={8}>8</option>
-          <option value={9}>9</option>
-          <option value={10}>10</option>
-        </select>
-      </div>
-      <div className="mb-3">
-        <label className="">House Size(square ft.):</label>
-        <input type="number" name="houseSize" value={apptData.houseSize} 
-        onChange={handleChange} className="w-44 h-8 ml-1 border-solid border-2 rounded-md" 
-        required/>
-      </div>
-      <button type="submit">Submit Request</button>
-    </form>
-    <p>{err}</p>
+      <form autoComplete="off" onSubmit={handleSubmit} 
+      className="flex flex-col box-border items-center font-sans font-normal" >
+        <h1 className="my-6">Appointment Request</h1>
+        <div className="border-solid border-2 rounded-lg p-4">
+          <div className="mb-3">
+            <label className="">Service Package:</label>
+            <select name="baseService" value={apptData.baseService} 
+            onChange={handleChange} className="w-56 h-8 ml-1 border-solid border-2 rounded-md" 
+            required>
+              <option value="643d6cf7392f4c61d764bed8">--Select a Service Package--</option>
+              <option value="643d6cf7392f4c61d764bed8">Chariot Package</option>
+              <option value="643d6cf7392f4c61d764bed9">Wagon Package</option>
+              <option value="643d6cf7392f4c61d764beda">Carriage Package</option>
+            </select>
+          </div>
+          <div className="mb-3 content-between">
+            <label className="mr-4">Address:</label>
+            <input name="address" value={apptData.address} 
+            onChange={handleChange} className="w-56 h-8 ml-12 border-solid border-2 rounded-md"
+            required/>
+          </div>
+          <div className="mb-3">
+            <label>Available Date:</label>
+            <input type="datetime-local" name="date" value={apptData.date} 
+            onChange={handleChange} className="w-56 h-8 ml-5 border-solid border-2 rounded-md"
+            required/>
+          </div>
+          <div className="mb-3">
+            <label>Scrub Scale:</label>
+            <select name="scrubScale" value={apptData.scrubScale} 
+            onChange={handleChange} className="w-56 h-8 ml-8 border-solid border-2 rounded-md" 
+            required>
+              <option value={1} selected>1</option>
+              <option value={2}>2</option>
+              <option value={3}>3</option>
+              <option value={4}>4</option>
+              <option value={5}>5</option>
+              <option value={6}>6</option>
+              <option value={7}>7</option>
+              <option value={8}>8</option>
+              <option value={9}>9</option>
+              <option value={10}>10</option>
+            </select>
+          </div>
+          <div>
+            <label className="">House Size(square ft.):</label>
+            <input type="number" name="houseSize" value={apptData.houseSize} 
+            onChange={handleChange} className="w-44 h-8 ml-1 border-solid border-2 rounded-md" 
+            required/>
+          </div>
+        </div>
+        <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-3">
+          Submit Request
+        </button>
+        
+      </form>
+      <p>{err}</p>
     </div>
   )
 }

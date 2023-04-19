@@ -19,14 +19,16 @@ export default function ConfirmedAppt({confirm, user, handleUpdate}) {
   })
 
   return (
-    <div className="m-3">
+    <div className="my-3 mx-12 p-2 border-solid border-2 rounded-lg">
         <p>{service}</p>
         <p>{confirm.address}</p>
         <p>{date}</p>
         <p>{confirm.status}</p>
         {user.isAdmin
         ?
-        <button onClick={() => handleUpdate(confirm)}>Complete</button>
+        <button onClick={() => handleUpdate(confirm)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          Complete
+        </button>
         :
         <button hidden='hidden'>Complete</button>
         }

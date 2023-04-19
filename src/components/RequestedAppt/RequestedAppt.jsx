@@ -19,14 +19,17 @@ export default function RequestedAppt({request, user, handleUpdate}) {
   })
   
     return (
-    <div className="m-3">
+    <div className="my-3 mx-12 p-2 border-solid border-2 rounded-lg">
         <p>{service}</p>
         <p>{request.address}</p>
         <p>{date}</p>
         <p>{request.status}</p>
         {user.isAdmin
         ?
-        <button onClick={() => handleUpdate(request)}>Confirm</button>
+        <button onClick={() => handleUpdate(request)}
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          Confirm
+        </button>
         :
         <button hidden='hidden'>Confirm</button>
         }

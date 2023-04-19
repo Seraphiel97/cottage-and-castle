@@ -66,16 +66,16 @@ export default function AppointmentHistory({user}) {
   return (
     <div className="text-center">
       <h1 className="my-6">Appointment History</h1>
-      <div className="grid grid-cols-3">
-        <div>
+      <div className="grid-rows-3 md:grid grid-cols-3">
+        <div className="m-3 mborder-solid border-2 rounded-lg">
           <h2 className="mb-6">Requested:</h2>
           {requests}
         </div>
-        <div>
+        <div className="m-3 border-solid border-2 rounded-lg">
           <h2 className="mb-6">Confirmed:</h2>
           {confirms}
         </div>
-        <div>
+        <div className="m-3 border-solid border-2 rounded-lg">
           <h2 className="mb-6">Completed:</h2>
           {completes}
         </div>
