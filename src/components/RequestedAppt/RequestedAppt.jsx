@@ -1,11 +1,22 @@
-import React from 'react'
+import {useState, useEffect} from 'react'
 
 export default function RequestedAppt({request, user, handleUpdate}) {
   
+  const [service, setPackage] = useState('')
+
+  useEffect(function() {
+    if (request.baseService === '643d6cf7392f4c61d764bed8') {
+      setPackage('Chariot Package')
+    } else if (request.baseService === '643d6cf7392f4c61d764bed9') {
+      setPackage('Wagon Package')
+    } else if (request.baseService === '643d6cf7392f4c61d764beda') {
+      setPackage('Carriage Package')
+    }
+  })
   
     return (
     <div>
-        <p>{request.baseService}</p>
+        <p>{service}</p>
         <p>{request.address}</p>
         <p>{request.date}</p>
         <p>{request.status}</p>
