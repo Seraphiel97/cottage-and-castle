@@ -41,10 +41,11 @@ export default function Appointment({user}) {
   }
 
   return (
-    <>
-    <h1 className="text-center my-6">Appointment Request</h1>
+    <div className="">
+    
     <form autoComplete="off" onSubmit={handleSubmit} 
-    className="flex flex-col text-center">
+    className="flex flex-col box-border items-center font-sans font-normal">
+      <h1 className="my-6">Appointment Request</h1>
       <div className="mb-3">
         <label className="">Service Package:</label>
         <select name="baseService" value={apptData.baseService} 
@@ -94,6 +95,6 @@ export default function Appointment({user}) {
       <button type="submit">Submit Request</button>
     </form>
     <p>{err}</p>
-    </>
+    </div>
   )
 }
