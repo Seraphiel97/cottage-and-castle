@@ -4,6 +4,8 @@ import * as appointmentsAPI from '../../utilities/appointments-api'
 
 export default function Appointment({user}) {
   
+  const navigate = useNavigate();
+
   const [apptData, setApptData] = useState({
     baseService: '',
     address: '',
@@ -23,7 +25,6 @@ export default function Appointment({user}) {
     evt.preventDefault()
     
     try {
-      
       const appt = await appointmentsAPI.createAppointment({...apptData, user: user._id})
       console.log(appt)
       setApptData({
@@ -33,7 +34,7 @@ export default function Appointment({user}) {
         scrubScale: '',
         houseSize: '',
       })
-
+      navigate('/appointment/history')
     } catch {
       setErr('Apologies, something went wrong. Please check all information fields and try again.')
     }
