@@ -43,8 +43,8 @@ export default function RegisterAcct({setUser, user}) {
   
   return (
     <div>
-      <h1>Register an Account</h1>
-      <form onSubmit={handleSubmit}>
+      <h1 className="">Register an Account</h1>
+      <form onSubmit={handleSubmit} className="flex flex-col justify-center items-center">
         <div>
           <label>
           Name:

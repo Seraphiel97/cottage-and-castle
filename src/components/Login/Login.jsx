@@ -39,7 +39,7 @@ export default function Login({setUser, user}) {
 
   return (
     <div>
-      <h1>Login</h1>
+      <h1 className="text-center">Login</h1>
       <form onSubmit={handleSubmit}>
         <div>
           <label>

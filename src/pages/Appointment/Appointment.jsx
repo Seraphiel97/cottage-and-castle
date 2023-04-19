@@ -45,7 +45,7 @@ export default function Appointment({user}) {
       <form autoComplete="off" onSubmit={handleSubmit} 
       className="flex flex-col box-border items-center font-sans font-normal" >
         <h1 className="my-6">Appointment Request</h1>
-        <div className="border-solid border-2 rounded-lg p-4">
+        <div className="border-solid border-2 rounded-lg p-4 text-2xl">
           <div className="mb-3">
             <label className="">Service Package:</label>
             <select name="baseService" value={apptData.baseService} 
@@ -58,7 +58,7 @@ export default function Appointment({user}) {
             </select>
           </div>
           <div className="mb-3 content-between">
-            <label className="mr-4">Address:</label>
+            <label className="mr-10">Address:</label>
             <input name="address" value={apptData.address} 
             onChange={handleChange} className="w-56 h-8 ml-12 border-solid border-2 rounded-md"
             required/>
@@ -66,13 +66,13 @@ export default function Appointment({user}) {
           <div className="mb-3">
             <label>Available Date:</label>
             <input type="datetime-local" name="date" value={apptData.date} 
-            onChange={handleChange} className="w-56 h-8 ml-5 border-solid border-2 rounded-md"
+            onChange={handleChange} className="w-56 h-8 ml-7 border-solid border-2 rounded-md"
             required/>
           </div>
           <div className="mb-3">
             <label>Scrub Scale:</label>
             <select name="scrubScale" value={apptData.scrubScale} 
-            onChange={handleChange} className="w-56 h-8 ml-8 border-solid border-2 rounded-md" 
+            onChange={handleChange} className="w-56 h-8 ml-12 border-solid border-2 rounded-md" 
             required>
               <option value={1} selected>1</option>
               <option value={2}>2</option>
@@ -89,7 +89,7 @@ export default function Appointment({user}) {
           <div>
             <label className="">House Size(square ft.):</label>
             <input type="number" name="houseSize" value={apptData.houseSize} 
-            onChange={handleChange} className="w-44 h-8 ml-1 border-solid border-2 rounded-md" 
+            onChange={handleChange} className="w-40 h-8 ml-1 border-solid border-2 rounded-md" 
             required/>
           </div>
         </div>

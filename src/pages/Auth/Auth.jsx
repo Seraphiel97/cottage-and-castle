@@ -6,14 +6,15 @@ export default function Auth({setUser, user}) {
   const [showLogin, setShowLogin] = useState(true)
   
   return (
-    <main>
+    <main className="flex flex-col justify-center items-center">
       {showLogin 
       ?
       <Login setUser={setUser} user={user}/>
       :
       <RegisterAcct setUser={setUser} user={user}/>
       }
-      <button onClick={() => setShowLogin(!showLogin)}>
+      <button onClick={() => setShowLogin(!showLogin)}
+      className="">
         {showLogin
         ?
         `Don't have an account?`
