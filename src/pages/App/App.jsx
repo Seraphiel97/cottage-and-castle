@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { Routes, Route } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service';
 import Auth from '../Auth/Auth'
@@ -7,7 +7,6 @@ import Home from '../Home/Home'
 import Services from '../Services/Services'
 import Appointment from '../Appointment/Appointment'
 import AppointmentHistory from '../AppointmentHistory/AppointmentHistory'
-import './App.css'
 
 function App() {
  
@@ -18,9 +17,9 @@ function App() {
   }
 
   return (
-    <main className="App">
+    <main>
       <>
-        <Nav user={user} updateUser={updateUser}/>
+        <Nav user={user} updateUser={updateUser} />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />

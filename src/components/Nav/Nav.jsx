@@ -11,7 +11,7 @@ export default function Nav({user, updateUser}) {
   }
   
   return (
-    <nav className="container mx-auto">
+    <nav className="flex justify-end mr-2">
       { user ?
       <>
         <Link to="/">Home</Link>

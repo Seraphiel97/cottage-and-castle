@@ -19,7 +19,7 @@ export default function CompletedAppt({complete, user, handleUpdate}) {
   })
   
   return (
-    <div>
+    <div className="m-3">
         <p>{service}</p>
         <p>{complete.address}</p>
         <p>{date}</p>

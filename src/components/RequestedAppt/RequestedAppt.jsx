@@ -19,7 +19,7 @@ export default function RequestedAppt({request, user, handleUpdate}) {
   })
   
     return (
-    <div>
+    <div className="m-3">
         <p>{service}</p>
         <p>{request.address}</p>
         <p>{date}</p>

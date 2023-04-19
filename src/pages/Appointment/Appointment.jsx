@@ -42,33 +42,37 @@ export default function Appointment({user}) {
 
   return (
     <>
-    <h1>Appointment Request</h1>
+    <h1 className="text-center my-6">Appointment Request</h1>
     <form autoComplete="off" onSubmit={handleSubmit} 
-    className="flex justify-between">
-      <div>
-        <label>Service Package:</label>
+    className="flex flex-col text-center">
+      <div className="mb-3">
+        <label className="">Service Package:</label>
         <select name="baseService" value={apptData.baseService} 
-        onChange={handleChange} required>
+        onChange={handleChange} className="w-56 h-8 ml-1 border-solid border-2 rounded-md" 
+        required>
           <option value="643d6cf7392f4c61d764bed8">--Select a Service Package--</option>
-          <option value="643d6cf7392f4c61d764bed8">Chariot</option>
-          <option value="643d6cf7392f4c61d764bed9">Wagon</option>
-          <option value="643d6cf7392f4c61d764beda">Carriage</option>
+          <option value="643d6cf7392f4c61d764bed8">Chariot Package</option>
+          <option value="643d6cf7392f4c61d764bed9">Wagon Package</option>
+          <option value="643d6cf7392f4c61d764beda">Carriage Package</option>
         </select>
       </div>
-      <div>
-        <label>Address:</label>
+      <div className="mb-3 content-between">
+        <label className="mr-4">Address:</label>
         <input name="address" value={apptData.address} 
-        onChange={handleChange} required/>
+        onChange={handleChange} className="w-56 h-8 ml-12 border-solid border-2 rounded-md"
+        required/>
       </div>
-      <div>
+      <div className="mb-3">
         <label>Available Date:</label>
         <input type="datetime-local" name="date" value={apptData.date} 
-        onChange={handleChange} required/>
+        onChange={handleChange} className="w-56 h-8 ml-5 border-solid border-2 rounded-md"
+        required/>
       </div>
-      <div>
+      <div className="mb-3">
         <label>Scrub Scale:</label>
         <select name="scrubScale" value={apptData.scrubScale} 
-        onChange={handleChange} required>
+        onChange={handleChange} className="w-56 h-8 ml-8 border-solid border-2 rounded-md" 
+        required>
           <option value={1} selected>1</option>
           <option value={2}>2</option>
           <option value={3}>3</option>
@@ -81,10 +85,11 @@ export default function Appointment({user}) {
           <option value={10}>10</option>
         </select>
       </div>
-      <div>
-        <label>House Size(square ft.):</label>
+      <div className="mb-3">
+        <label className="">House Size(square ft.):</label>
         <input type="number" name="houseSize" value={apptData.houseSize} 
-        onChange={handleChange} required/>
+        onChange={handleChange} className="w-44 h-8 ml-1 border-solid border-2 rounded-md" 
+        required/>
       </div>
       <button type="submit">Submit Request</button>
     </form>
