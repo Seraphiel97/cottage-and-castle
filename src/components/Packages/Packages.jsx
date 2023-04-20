@@ -7,7 +7,7 @@ export default function Packages({service}) {
 
   
   return (
-    <div className="sm: mb-3 mx-3 py-6 border-solid border-2 rounded-lg text-lg text-white bg-indigo">
+    <div className="sm: mb-3 mx-3 py-6 border-solid border-2 rounded-lg text-lg bg-gradient-to-t from-pink to-mint">
         <h2 className="font-medium mb-1">{service.name} Package:</h2>
         <div className="my-1 bg-gold">
           <p>Dusting: {service.dusting ? 'Yes' : 'No'}</p>

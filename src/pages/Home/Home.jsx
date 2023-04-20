@@ -1,12 +1,13 @@
 import React from 'react'
 
+
 export default function Home() {
   return (
     <div className="flex flex-col justify-center items-center text-center">
       <div>
-        <img src="./src/assets/businessLogo.png" className="w-full"/>
+        <img src="src/assets/businessLogo.png" className="w-full"/>
       </div>
-      <div className="m-6 p-6 bg-gold bg-opacity-80 rounded-xl text-white">
+      <div className="m-6 p-6 bg-gradient-to-t from-pink to-mint rounded-xl">
         <h2 >Mission Statement</h2>
         <div className="px-6">
           <p>
@@ -42,8 +43,8 @@ export default function Home() {
       </div>
       <h2>Reviews</h2>
       <div className="justify-center md:inline-flex">
-        <div className="mb-6 m-1 p-3 bg-indigo text-white rounded-xl">
-          <img src="./src/assets/apartments.jpg" className="max-w-md ml-4 px-16 pb-3 md:max-w-xs mx-1 rounded-lg"/>
+        <div className="mb-6 m-1 p-3 bg-gradient-to-b from-pink to-mint rounded-xl">
+          <img src="./src/assets/apartments.jpg" className="max-w-md ml-4 px-16 pb-3 md:max-w-xs mx-1"/>
           <h3>Dennis Byrd</h3>
           <p className="px-16">
             "I was extremely satisfied with the service provided by Cottage & Castle. They exceeded my expectations, and I would 
@@ -52,8 +53,8 @@ export default function Home() {
             in the future."
           </p>
         </div>
-        <div className="mb-6 m-1 p-3 bg-indigo text-white rounded-xl">
-          <img src="./src/assets/farmhouse.jpg" className="max-w-md ml-4 px-16 pb-3 md:max-w-xs mx-1 rounded-lg"/>
+        <div className="mb-6 m-1 p-3 bg-gradient-to-b from-pink to-mint rounded-xl">
+          <img src="./src/assets/farmhouse.jpg" className="max-w-md ml-4 px-16 pb-3 md:max-w-xs mx-1"/>
           <h3>Michael Baker</h3>
           <p className="px-16">
             "What impressed me the most was how they took care of the 
@@ -62,8 +63,8 @@ export default function Home() {
             of the microwave, which I had never thought of cleaning before."
           </p>
         </div>
-        <div className="mb-6 m-1 p-3 bg-indigo text-white rounded-xl">
-          <img src="./src/assets/largehome.jpg" className="max-w-md ml-4 px-16 pb-3 md:max-w-xs mx-1 rounded-lg"/>
+        <div className="mb-6 m-1 p-3 bg-gradient-to-b from-pink to-mint rounded-xl shadow-lg">
+          <img src="/src/assets/largehome.jpg" className="max-w-md ml-4 px-16 pb-3 md:max-w-xs mx-1"/>
           <h3>Lee Brown</h3>
           <p className="px-16">
             "I was really impressed with their work. They arrived on time and 

@@ -67,15 +67,15 @@ export default function AppointmentHistory({user}) {
     <div className="text-center">
       <h1 className="my-6">Appointment History</h1>
       <div className="grid-rows-3 md:grid grid-cols-3">
-        <div className="m-3 mborder-solid border-2 rounded-lg bg-gold text-white">
+        <div className="m-3 mborder-solid border-2 rounded-lg bg-gradient-to-b from-pink to-mint text-white">
           <h2 className="mb-6">Requested:</h2>
           {requests}
         </div>
-        <div className="m-3 border-solid border-2 rounded-lg bg-gold text-white">
+        <div className="m-3 border-solid border-2 rounded-lg bg-gradient-to-t from-pink to-mint text-white">
           <h2 className="mb-6">Confirmed:</h2>
           {confirms}
         </div>
-        <div className="m-3 border-solid border-2 rounded-lg bg-gold text-white">
+        <div className="m-3 border-solid border-2 rounded-lg bg-gradient-to-b from-pink to-mint text-white">
           <h2 className="mb-6">Completed:</h2>
           {completes}
         </div>

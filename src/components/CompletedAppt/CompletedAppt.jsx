@@ -19,7 +19,7 @@ export default function CompletedAppt({complete, user, handleUpdate}) {
   })
   
   return (
-    <div className="my-3 mx-12 p-2 border-solid border-2 rounded-lg bg-indigo">
+    <div className="my-3 mx-12 p-2 border-solid border-2 rounded-lg bg-charcoal">
         <p>{service}</p>
         <p>{complete.address}</p>
         <p>{date}</p>
@@ -27,7 +27,7 @@ export default function CompletedAppt({complete, user, handleUpdate}) {
         {user.isAdmin
         ?
         <button onClick={() => handleUpdate(complete)}
-        className="bg-teal hover:bg-gold text-white font-bold py-2 px-4 rounded-lg">
+        className="bg-gradient-to-b from-pink to-mint hover:bg-charcoal text-white font-bold py-2 px-4 rounded-lg">
           Not Complete
         </button>
         :

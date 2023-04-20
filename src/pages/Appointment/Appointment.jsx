@@ -45,7 +45,7 @@ export default function Appointment({user}) {
       <form autoComplete="off" onSubmit={handleSubmit} 
       className="flex flex-col box-border items-center font-sans font-normal" >
         <h1 className="my-6">Appointment Request</h1>
-        <div className="border-solid border-2 rounded-lg p-4 text-2xl bg-gold text-white">
+        <div className="border-solid border-2 rounded-lg p-4 text-2xl bg-gradient-to-b from-pink to-mint">
           <div className="mb-3">
             <label className="">Service Package:</label>
             <select name="baseService" value={apptData.baseService} 
@@ -93,7 +93,7 @@ export default function Appointment({user}) {
             required/>
           </div>
         </div>
-        <button type="submit" className="bg-teal hover:bg-indigo text-white font-bold py-2 px-4 rounded mt-3">
+        <button type="submit" className="bg-gradient-to-t from-pink to-mint hover:bg-gray text-white font-bold py-2 px-4 rounded mt-3">
           Submit Request
         </button>
         

@@ -10,7 +10,7 @@ export default function Nav({user, updateUser}) {
   }
   
   return (
-    <nav className="flex justify-center">
+    <nav className="flex justify-center items-center bg-charcoal text-white h-10">
       { user ?
       <>
         <Link to="/">Home</Link>
