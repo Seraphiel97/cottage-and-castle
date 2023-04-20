@@ -10,7 +10,7 @@ export default function Home() {
       <div>
         <img src={businessLogo} className="w-full"/>
       </div>
-      <div className="m-6 p-6 bg-gradient-to-t from-pink to-mint rounded-xl">
+      <div className="m-6 -mt-12 p-6 bg-gradient-to-t from-pink to-mint rounded-xl">
         <h2 >Mission Statement</h2>
         <div className="px-6">
           <p>
