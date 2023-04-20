@@ -51,7 +51,7 @@ export default function Appointment({user}) {
             <select name="baseService" value={apptData.baseService} 
             onChange={handleChange} className="w-56 h-8 ml-1 border-solid border-2 rounded-md bg-indigo" 
             required>
-              <option value="643d6cf7392f4c61d764bed8">--Select a Service Package--</option>
+              <option>--Select a Service Package--</option>
               <option value="643d6cf7392f4c61d764bed8">Chariot Package</option>
               <option value="643d6cf7392f4c61d764bed9">Wagon Package</option>
               <option value="643d6cf7392f4c61d764beda">Carriage Package</option>
@@ -93,7 +93,7 @@ export default function Appointment({user}) {
             required/>
           </div>
         </div>
-        <button type="submit" className="bg-gradient-to-t from-pink to-mint hover:bg-gray text-white font-bold py-2 px-4 rounded mt-3">
+        <button type="submit" className="bg-gradient-to-t from-pink to-mint hover:bg-gray font-bold py-2 px-4 rounded mt-3">
           Submit Request
         </button>
         

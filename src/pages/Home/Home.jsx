@@ -1,11 +1,14 @@
 import React from 'react'
-
+import apartments from '../../assets/apartments.jpg'
+import businessLogo from '../../assets/businessLogo.png'
+import farmhouse from '../../assets/farmhouse.jpg'
+import largehome from '../../assets/largehome.jpg'
 
 export default function Home() {
   return (
     <div className="flex flex-col justify-center items-center text-center">
       <div>
-        <img src="src/assets/businessLogo.png" className="w-full"/>
+        <img src={businessLogo} className="w-full"/>
       </div>
       <div className="m-6 p-6 bg-gradient-to-t from-pink to-mint rounded-xl">
         <h2 >Mission Statement</h2>
@@ -44,7 +47,7 @@ export default function Home() {
       <h2>Reviews</h2>
       <div className="justify-center md:inline-flex">
         <div className="mb-6 m-1 p-3 bg-gradient-to-b from-pink to-mint rounded-xl">
-          <img href="https://images.unsplash.com/photo-1545317524-e0ccf9d87753?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" 
+          <img src={apartments} 
           className="max-w-md ml-4 px-16 pb-3 md:max-w-xs mx-1"/>
           <h3>Dennis Byrd</h3>
           <p className="px-16">
@@ -55,7 +58,7 @@ export default function Home() {
           </p>
         </div>
         <div className="mb-6 m-1 p-3 bg-gradient-to-b from-pink to-mint rounded-xl">
-          <img src="./src/assets/farmhouse.jpg" className="max-w-md ml-4 px-16 pb-3 md:max-w-xs mx-1"/>
+          <img src={farmhouse} className="max-w-md ml-4 px-16 pb-3 md:max-w-xs mx-1"/>
           <h3>Michael Baker</h3>
           <p className="px-16">
             "What impressed me the most was how they took care of the 
@@ -65,7 +68,7 @@ export default function Home() {
           </p>
         </div>
         <div className="mb-6 m-1 p-3 bg-gradient-to-b from-pink to-mint rounded-xl shadow-lg">
-          <img src="/src/assets/largehome.jpg" className="max-w-md ml-4 px-16 pb-3 md:max-w-xs mx-1"/>
+          <img src={largehome} className="max-w-md ml-4 px-16 pb-3 md:max-w-xs mx-1"/>
           <h3>Lee Brown</h3>
           <p className="px-16">
             "I was really impressed with their work. They arrived on time and 
