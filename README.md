@@ -1,4 +1,4 @@
-***<div style="text-align: center;">
+<div align="center">
 
 # Cottage & Castle
 
@@ -82,7 +82,7 @@ For the thorough and intrepid visitor, this [Trello Board](https://trello.com/b/
 * Refactor Models to Include Property Address
 * Message Functionality Between Client/Admin 
 
-</div>***
+</div>
 
 
 
