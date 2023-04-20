@@ -44,7 +44,7 @@ export default function RegisterAcct({setUser, user}) {
   return (
     <div>
       <h1 className="my-6 text-center">Register an Account</h1>
-      <form onSubmit={handleSubmit} className="flex flex-col justify-center items-center border-solid border-2 rounded-lg p-3 bg-gold text-white">
+      <form onSubmit={handleSubmit} className="flex flex-col justify-center items-center border-solid border-2 rounded-lg p-3 bg-gradient-to-t from-pink to-mint">
         <div className="m-2">
           <label className='mr-10'>
           Name:
@@ -84,7 +84,7 @@ export default function RegisterAcct({setUser, user}) {
           <input type="text" name="adminKey" value={credentials.adminKey} 
           onChange={handleChange} className="border-solid border-2 rounded-lg ml-12 bg-indigo" />
         </div>
-        <button type="submit" className="bg-teal hover:bg-indigo text-white font-bold py-2 px-4 rounded-lg mt-3">
+        <button type="submit" className="bg-charcoal hover:bg-charcoal text-white font-bold py-2 px-4 rounded-lg mt-3">
           Sign In
         </button>
       </form>

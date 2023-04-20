@@ -14,7 +14,7 @@ export default function Auth({setUser, user}) {
       <RegisterAcct setUser={setUser} user={user}/>
       }
       <button onClick={() => setShowLogin(!showLogin)}
-      className="bg-teal hover:bg-indigo text-white font-bold py-2 px-4 rounded-lg mt-3">
+      className="bg-gradient-to-b from-pink to-mint hover:bg-charcoal text-white font-bold py-2 px-4 rounded-lg mt-3">
         {showLogin
         ?
         `Don't have an account?`
