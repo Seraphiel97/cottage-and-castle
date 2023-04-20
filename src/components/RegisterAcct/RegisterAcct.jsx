@@ -44,13 +44,13 @@ export default function RegisterAcct({setUser, user}) {
   return (
     <div>
       <h1 className="my-6 text-center">Register an Account</h1>
-      <form onSubmit={handleSubmit} className="flex flex-col justify-center items-center border-solid border-2 rounded-lg p-3">
+      <form onSubmit={handleSubmit} className="flex flex-col justify-center items-center border-solid border-2 rounded-lg p-3 bg-gold text-white">
         <div className="m-2">
           <label className='mr-10'>
           Name:
           </label>
           <input type="text" name="name" value={credentials.name} 
-          onChange={handleChange} className="border-solid border-2 rounded-lg ml-12"
+          onChange={handleChange} className="border-solid border-2 rounded-lg ml-12 bg-indigo"
            required/>
         </div>
         <div className="m-2">
@@ -58,7 +58,7 @@ export default function RegisterAcct({setUser, user}) {
           Email:
           </label>
           <input type="text" name="email" value={credentials.email} 
-          onChange={handleChange} className="border-solid border-2 rounded-lg ml-12"
+          onChange={handleChange} className="border-solid border-2 rounded-lg ml-12 bg-indigo"
           required/>
         </div>
         <div className="m-2">
@@ -66,7 +66,7 @@ export default function RegisterAcct({setUser, user}) {
           Password:
           </label>
         <input type="password" name="password" value={credentials.password}
-        onChange={handleChange} className="border-solid border-2 rounded-lg ml-12"
+        onChange={handleChange} className="border-solid border-2 rounded-lg ml-12 bg-indigo"
         required/>
         </div>
         <div className="m-2">
@@ -74,7 +74,7 @@ export default function RegisterAcct({setUser, user}) {
           Confirm Password:
           </label>
           <input type="password" name="confirm" value={credentials.confirm} 
-          onChange={handleChange} className="border-solid border-2 rounded-lg"
+          onChange={handleChange} className="border-solid border-2 rounded-lg bg-indigo"
           required/>
         </div>
         <div className="m-2">
@@ -82,9 +82,9 @@ export default function RegisterAcct({setUser, user}) {
           Admin Key:
           </label>
           <input type="text" name="adminKey" value={credentials.adminKey} 
-          onChange={handleChange} className="border-solid border-2 rounded-lg ml-12" />
+          onChange={handleChange} className="border-solid border-2 rounded-lg ml-12 bg-indigo" />
         </div>
-        <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-3">
+        <button type="submit" className="bg-teal hover:bg-indigo text-white font-bold py-2 px-4 rounded-lg mt-3">
           Sign In
         </button>
       </form>

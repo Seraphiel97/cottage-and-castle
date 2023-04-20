@@ -29,7 +29,7 @@ export default function Services() {
       <div className="sm:grid grid-rows-3 md:grid grid-cols-3">
         {packages}
         <div className="col-span-3 text-center">
-          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          <button className="bg-teal hover:bg-indigo text-white font-bold py-2 px-4 rounded"
           onClick={handleClick}>
             Request Your Initial Appointment Today!
           </button>
