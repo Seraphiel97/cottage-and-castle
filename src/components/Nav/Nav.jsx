@@ -1,7 +1,6 @@
 import {useState} from 'react'
 import { Link } from 'react-router-dom'
 import * as usersService from '../../utilities/users-service';
-import {HiMenu} from "react-icons/hi"
 
 export default function Nav({user, updateUser}) {
   
