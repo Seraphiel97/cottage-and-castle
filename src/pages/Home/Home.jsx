@@ -44,7 +44,8 @@ export default function Home() {
       <h2>Reviews</h2>
       <div className="justify-center md:inline-flex">
         <div className="mb-6 m-1 p-3 bg-gradient-to-b from-pink to-mint rounded-xl">
-          <img src="./src/assets/apartments.jpg" className="max-w-md ml-4 px-16 pb-3 md:max-w-xs mx-1"/>
+          <img href="https://images.unsplash.com/photo-1545317524-e0ccf9d87753?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" 
+          className="max-w-md ml-4 px-16 pb-3 md:max-w-xs mx-1"/>
           <h3>Dennis Byrd</h3>
           <p className="px-16">
             "I was extremely satisfied with the service provided by Cottage & Castle. They exceeded my expectations, and I would 
