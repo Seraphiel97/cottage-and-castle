@@ -8,6 +8,32 @@ export default function Home() {
         <img src="./src/assets/kitchen.jpg" className="max-w-md md:max-w-2xl"/>
         <h2>Mission Statement</h2>
       </div>
+      <p>
+        At Cottage & Castle, we believe that cleaning is more than just a 
+        chore. It's a magical transformation that turns a messy and chaotic 
+        space into a beautiful and sparkling retreat. We use our cleaning 
+        powers to create a sense of wonder and enchantment in every home we 
+        clean.
+      </p>
+      <p>
+        Our team of skilled cleaners is like a group of fairy godmothers, 
+        bringing a touch of magic to every corner of your home. We wave our 
+        magic wands, and your living room becomes a cozy haven, your kitchen 
+        a place of delicious smells and warmth, and your bedroom a serene 
+        sanctuary.
+      </p>
+      <p>
+        Just like magic, our cleaning services are tailored to meet your 
+        unique needs and preferences. Whether you live in a cozy cottage or 
+        a majestic castle, we have the skills and expertise to transform your 
+        space into a place of beauty and enchantment.
+      </p>
+      <p>
+        At Cottage & Castle, we understand that your home is your kingdom, 
+        and we're here to help you reign over it. Let us sprinkle a little 
+        bit of magic into your life and experience the joy and wonder of a 
+        clean and sparkling home.
+      </p>
       <h2>Reviews</h2>
       <div className="md:inline-flex">
         <div>

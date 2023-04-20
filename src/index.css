@@ -17,7 +17,11 @@
     }
 
     h2 {
-        @apply text-2xl
+        @apply font-[Playfair] text-2xl
+    }
+
+    h3 {
+        @apply font-[Playfair] text-xl
     }
 
 }
