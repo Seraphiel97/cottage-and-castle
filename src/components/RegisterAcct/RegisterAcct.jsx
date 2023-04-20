@@ -43,44 +43,50 @@ export default function RegisterAcct({setUser, user}) {
   
   return (
     <div>
-      <h1 className="">Register an Account</h1>
-      <form onSubmit={handleSubmit} className="flex flex-col justify-center items-center">
-        <div>
-          <label>
+      <h1 className="my-6 text-center">Register an Account</h1>
+      <form onSubmit={handleSubmit} className="flex flex-col justify-center items-center border-solid border-2 rounded-lg p-3">
+        <div className="m-2">
+          <label className='mr-10'>
           Name:
           </label>
           <input type="text" name="name" value={credentials.name} 
-          onChange={handleChange} required/>
+          onChange={handleChange} className="border-solid border-2 rounded-lg ml-12"
+           required/>
         </div>
-        <div>
-          <label>
+        <div className="m-2">
+          <label className="mr-11">
           Email:
           </label>
           <input type="text" name="email" value={credentials.email} 
-          onChange={handleChange} required/>
+          onChange={handleChange} className="border-solid border-2 rounded-lg ml-12"
+          required/>
         </div>
-        <div>
-          <label>
+        <div className="m-2">
+          <label className="mr-3">
           Password:
           </label>
         <input type="password" name="password" value={credentials.password}
-        onChange={handleChange} required/>
+        onChange={handleChange} className="border-solid border-2 rounded-lg ml-12"
+        required/>
         </div>
-        <div>
+        <div className="m-2">
           <label>
           Confirm Password:
           </label>
           <input type="password" name="confirm" value={credentials.confirm} 
-          onChange={handleChange} required/>
+          onChange={handleChange} className="border-solid border-2 rounded-lg"
+          required/>
         </div>
-        <div>
-          <label>
+        <div className="m-2">
+          <label className="mr-2">
           Admin Key:
           </label>
           <input type="text" name="adminKey" value={credentials.adminKey} 
-          onChange={handleChange} />
+          onChange={handleChange} className="border-solid border-2 rounded-lg ml-12" />
         </div>
-        <button type="submit">Sign In</button>
+        <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-3">
+          Sign In
+        </button>
       </form>
     </div>
   )

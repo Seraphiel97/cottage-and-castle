@@ -39,23 +39,27 @@ export default function Login({setUser, user}) {
 
   return (
     <div>
-      <h1 className="text-center">Login</h1>
-      <form onSubmit={handleSubmit}>
-        <div>
+      <h1 className="text-center my-6">Login</h1>
+      <form onSubmit={handleSubmit}className="flex flex-col justify-center items-center border-solid border-2 rounded-lg p-3">
+        <div className="m-2">
           <label>
           Email:
           </label>
           <input type="text" name="email" value={credentials.email} 
-          onChange={handleChange} required/>
+          onChange={handleChange} className="border-solid border-2 rounded-lg ml-10"
+          required/>
         </div>
-        <div>
+        <div className="m-2">
           <label>
           Password:
           </label>
-        <input type="password" name="password" value={credentials.password}
-        onChange={handleChange} required/>
+          <input type="password" name="password" value={credentials.password}
+          onChange={handleChange} className="border-solid border-2 rounded-lg ml-2"
+          required/>
         </div>
-        <button type="submit">Sign In</button>
+        <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-3">
+          Sign In
+        </button>
       </form>
       <p>{error}</p>
     </div>
