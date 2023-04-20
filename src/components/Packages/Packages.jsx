@@ -1,15 +1,11 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
 
 export default function Packages({service}) {
-  const navigate= useNavigate()
 
-
-  
   return (
     <div className="sm: mb-3 mx-3 py-6 border-solid border-2 rounded-lg text-lg bg-gradient-to-t from-pink to-mint">
         <h2 className="font-medium mb-1">{service.name} Package:</h2>
-        <div className="my-1 bg-gold">
+        <div className="my-1">
           <p>Dusting: {service.dusting ? 'Yes' : 'No'}</p>
           <p>Floors: {service.floors ? 'Yes' : 'No'}</p>
           <p>Kitchen Surfaces: {service.kitchenSurfaces ? 'Yes' : 'No'}</p>
@@ -21,7 +17,7 @@ export default function Packages({service}) {
           <p>Oven Degrease: {service.ovenDegrease ? 'Yes' : 'No'}</p>
           <p>Organization: {service.organization ? 'Yes' : 'No'}</p>
         </div>
-        <h3 className="mt-1">For as little as ${service.price}!</h3>
+        <h2 className="mt-1">For as little as ${service.price}!</h2>
     </div>
   )
 }

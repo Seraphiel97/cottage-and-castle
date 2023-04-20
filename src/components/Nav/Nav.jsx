@@ -1,14 +1,8 @@
-import {useState} from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import * as usersService from '../../utilities/users-service';
 
 export default function Nav({user, updateUser}) {
-  
-  const [show, setShow] = useState(false)
-
-  function handleToggle() {
-    setShow(!show)
-  }
 
   function handleLogout() {
     usersService.logOut();
