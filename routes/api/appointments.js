@@ -7,6 +7,6 @@ router.post('/create', ensureLoggedIn, appointmentsCtrl.createAppointment)
 
 router.get('/retrieve', ensureLoggedIn, appointmentsCtrl.getAll)
 
-router.put('/status', appointmentsCtrl.changeStatus)
+router.put('/status', ensureLoggedIn, appointmentsCtrl.changeStatus)
 
 module.exports = router
