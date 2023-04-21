@@ -47,7 +47,7 @@ export default function Login({setUser, user}) {
           Email:
           </label>
           <input type="text" name="email" value={credentials.email} 
-          onChange={handleChange} className="border-solid border-2 rounded-lg ml-10 bg-indigo"
+          onChange={handleChange} className="border-solid border-2 rounded-lg ml-10"
           required/>
         </div>
         <div className="m-2">
@@ -55,10 +55,10 @@ export default function Login({setUser, user}) {
           Password:
           </label>
           <input type="password" name="password" value={credentials.password}
-          onChange={handleChange} className="border-solid border-2 rounded-lg ml-2 bg-indigo"
+          onChange={handleChange} className="border-solid border-2 rounded-lg ml-2"
           required/>
         </div>
-        <button type="submit" className="bg-charcoal hover:bg-indigo text-white font-bold py-2 px-4 rounded-lg mt-3">
+        <button type="submit" className="bg-charcoal hover: text-white font-bold py-2 px-4 rounded-lg mt-3">
           Sign In
         </button>
       </form>

@@ -49,7 +49,7 @@ export default function RegisterAcct({setUser, user}) {
           Name:
           </label>
           <input type="text" name="name" value={credentials.name} 
-          onChange={handleChange} className="border-solid border-2 rounded-lg ml-12 bg-indigo"
+          onChange={handleChange} className="border-solid border-2 rounded-lg ml-12"
            required/>
         </div>
         <div className="m-2">
@@ -57,7 +57,7 @@ export default function RegisterAcct({setUser, user}) {
           Email:
           </label>
           <input type="text" name="email" value={credentials.email} 
-          onChange={handleChange} className="border-solid border-2 rounded-lg ml-12 bg-indigo"
+          onChange={handleChange} className="border-solid border-2 rounded-lg ml-12"
           required/>
         </div>
         <div className="m-2">
@@ -65,7 +65,7 @@ export default function RegisterAcct({setUser, user}) {
           Password:
           </label>
         <input type="password" name="password" value={credentials.password}
-        onChange={handleChange} className="border-solid border-2 rounded-lg ml-12 bg-indigo"
+        onChange={handleChange} className="border-solid border-2 rounded-lg ml-12"
         required/>
         </div>
         <div className="m-2">
@@ -73,7 +73,7 @@ export default function RegisterAcct({setUser, user}) {
           Confirm Password:
           </label>
           <input type="password" name="confirm" value={credentials.confirm} 
-          onChange={handleChange} className="border-solid border-2 rounded-lg bg-indigo"
+          onChange={handleChange} className="border-solid border-2 rounded-lg"
           required/>
         </div>
         <div className="m-2">
@@ -81,7 +81,7 @@ export default function RegisterAcct({setUser, user}) {
           Admin Key:
           </label>
           <input type="text" name="adminKey" value={credentials.adminKey} 
-          onChange={handleChange} className="border-solid border-2 rounded-lg ml-12 bg-indigo" />
+          onChange={handleChange} className="border-solid border-2 rounded-lg ml-12" />
         </div>
         <button type="submit" className="bg-charcoal hover:bg-charcoal text-white font-bold py-2 px-4 rounded-lg mt-3">
           Sign In
