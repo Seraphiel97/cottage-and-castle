@@ -1,9 +1,8 @@
-import {useState} from 'react'
+import React from 'react'
 import Login from '../../components/Login/Login'
 import RegisterAcct from '../../components/RegisterAcct/RegisterAcct'
 
 export default function Auth({setUser, user}) {
-  const [showLogin, setShowLogin] = useState(true)
   
   return (
     <main className="flex flex-col justify-center items-center">

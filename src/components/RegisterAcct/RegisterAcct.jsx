@@ -5,6 +5,7 @@ import * as usersService from '../../utilities/users-service'
 export default function RegisterAcct({setUser, user}) {
   const navigate = useNavigate();
 
+  // State used to send information to the server for creation functionality
   const [credentials, setCredentials] = useState({
     name: '',
     email: '',
@@ -22,18 +23,16 @@ export default function RegisterAcct({setUser, user}) {
     }
   })
 
+  // Allows the input values to change
   function handleChange(evt) {
     setCredentials({ ...credentials, [evt.target.name]: evt.target.value });
     setError('');
   }
   
+  // Sends data to the server for creation of a user
   async function handleSubmit(evt) {
-    // Prevent form from being submitted to the server
     evt.preventDefault();
     try {
-      // The promise returned by the signUp service method 
-      // will resolve to the user object included in the
-      // payload of the JSON Web Token (JWT)
       const user = await usersService.signUp(credentials);
       setUser(user);
     } catch {

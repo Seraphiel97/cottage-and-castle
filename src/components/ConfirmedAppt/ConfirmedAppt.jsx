@@ -2,9 +2,11 @@ import {useState, useEffect} from 'react'
 
 export default function ConfirmedAppt({confirm, user, handleUpdate}) {
   
+  // State that allows for the formatting of data from a document
   const [service, setPackage] = useState('')
   const [date, setDate] = useState('')
 
+  // Uses the state to render the data more readably
   useEffect(function() {
     if (confirm.baseService === '643d6cf7392f4c61d764bed8') {
       setPackage('Chariot Package')

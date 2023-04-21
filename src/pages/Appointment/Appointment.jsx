@@ -16,17 +16,19 @@ export default function Appointment({user}) {
 
   const [err, setErr] = useState('')
   
+  // Allows the input information to change and update the state
   function handleChange(evt) {
     setApptData({...apptData, [evt.target.name]: evt.target.value})
   }
   
+  // Handles form submission
   async function handleSubmit(evt) {
     
     evt.preventDefault()
     
     try {
+      // Creates new appointment document
       const appt = await appointmentsAPI.createAppointment({...apptData, user: user._id})
-      console.log(appt)
       setApptData({
         baseService: '',
         address: '',

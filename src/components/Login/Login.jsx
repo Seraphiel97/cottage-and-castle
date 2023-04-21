@@ -5,31 +5,32 @@ import * as usersService from '../../utilities/users-service'
 export default function Login({setUser, user}) {
   const navigate = useNavigate();
 
+  // State used in the submission to the server
   const [credentials, setCredentials] = useState({
     email: '',
     password: ''
   });
   
+  // Allows for the display of an error
   const [error, setError] = useState('');
 
+  // Only allows a visitor on the page to sign in
   useEffect(function() {
     if (user) {
       navigate('/')
     }
   })
 
+  // Allows the manipulation of the input fields to add data
   function handleChange(evt) {
     setCredentials({ ...credentials, [evt.target.name]: evt.target.value });
     setError('');
   }
   
+  // Handles the data sent to the server and setting the user state
   async function handleSubmit(evt) {
-    // Prevent form from being submitted to the server
     evt.preventDefault();
     try {
-      // The promise returned by the signUp service method 
-      // will resolve to the user object included in the
-      // payload of the JSON Web Token (JWT)
       const user = await usersService.login(credentials);
       setUser(user);
     } catch {

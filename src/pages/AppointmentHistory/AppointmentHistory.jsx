@@ -6,20 +6,23 @@ import * as appointmentsAPI from '../../utilities/appointments-api'
 
 
 export default function AppointmentHistory({user}) {
-  
+  // These states hold appointment data fetched by the getAll function
   const [requestedAppts, setRequestedAppts] = useState([])
   const [confirmedAppts, setConfirmedAppts] = useState([])
   const [completedAppts, setCompletedAppts] = useState([])
 
+  // Renders all appointments upon first render
   useEffect(function() {
     getAll();
   }, [])
 
+  // Used by the getAll function to change the state to render updated info
   function handleState(data) {
     const requested = [];
     const confirmed = [];
     const completed = [];
-  
+    
+    // data is coming from the JSON response of getAll function
     data.forEach(appt => {
       if (appt.status === 'Requested') {
         requested.push(appt);
@@ -29,12 +32,13 @@ export default function AppointmentHistory({user}) {
         completed.push(appt);
       }
     });
-  
+    
     setRequestedAppts(requested);
     setConfirmedAppts(confirmed);
     setCompletedAppts(completed);
   }
 
+  // Fetches all appointment data from server through AJAX, used by useEffect and handleUpdate
   async function getAll() {
     const appointments = await appointmentsAPI.getAll()
     if (user.isAdmin) {
@@ -45,20 +49,23 @@ export default function AppointmentHistory({user}) {
     }
   }
 
+  // Finds and updates one appointment status, fetches updated information from server
   async function handleUpdate(appointment) {
     const appt = await appointmentsAPI.changeStatus(appointment)
-    console.log(appt);
     getAll();
   }
   
+  // Maps state data to the component for rendering
   const requests = requestedAppts.map((request, index) => (
     <RequestedAppt key={index} request={request} user={user} handleUpdate={handleUpdate}/>
   ))
 
+  // Maps state data to the component for rendering
   const confirms = confirmedAppts.map((confirm, index) => (
     <ConfirmedAppt key={index} confirm={confirm} user={user} handleUpdate={handleUpdate}/>
   ))
 
+  // Maps state data to the component for rendering
   const completes = completedAppts.map((complete, index) => (
     <CompletedAppt key={index} complete={complete} user={user} handleUpdate={handleUpdate}/>
   ))

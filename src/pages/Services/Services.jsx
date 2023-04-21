@@ -7,6 +7,7 @@ export default function Services() {
   const navigate = useNavigate()
   const [services, setServices] = useState([])
 
+  // Instead of hard coding services, the useEffect fetches data from server
   useEffect(function() {
     async function getServices() {
       const packages = await servicesAPI.getServices();
@@ -15,10 +16,12 @@ export default function Services() {
     getServices()
   }, [])
 
+  // Used by the button to take the user to the appointment request page
   function handleClick() {
     navigate('/appointment')
   }
 
+  // Maps state data to the component for rendering
   const packages = services.map((service, index) => (
     <Packages service={service} key={index} />
   ))
