@@ -1,5 +1,3 @@
-<div align="center">
-
 # Cottage & Castle
 
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
@@ -81,8 +79,6 @@ For the thorough and intrepid visitor, this [Trello Board](https://trello.com/b/
 * Recurring Appointment Functionality
 * Refactor Models to Include Property Address
 * Message Functionality Between Client/Admin 
-
-</div>
 
 
 
