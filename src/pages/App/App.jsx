@@ -22,7 +22,7 @@ function App() {
         <Nav user={user} updateUser={updateUser} />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/services" element={<Services />} />
+          <Route path="/services" element={<Services user={user}/>} />
           <Route path="/auth" element={<Auth setUser={setUser} user={user}/>} />
           <Route path="/appointment" element={<Appointment user={user}/>} />
           <Route path="/appointment/history" element={<AppointmentHistory user={user}/>} />

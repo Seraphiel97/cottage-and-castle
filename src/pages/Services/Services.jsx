@@ -3,7 +3,7 @@ import * as servicesAPI from '../../utilities/services-api'
 import Packages from '../../components/Packages/Packages'
 import { useNavigate } from 'react-router-dom'
 
-export default function Services() {
+export default function Services({user}) {
   const navigate = useNavigate()
   const [services, setServices] = useState([])
 
@@ -18,7 +18,7 @@ export default function Services() {
 
   // Used by the button to take the user to the appointment request page
   function handleClick() {
-    navigate('/appointment')
+   user ? navigate('/appointment') : navigate('/auth')
   }
 
   // Maps state data to the component for rendering
